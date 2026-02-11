@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para América 💘</title>
+  <meta name="description" content="Sorpresa de 14 de febrero para América" />
+
+  <style>
+    :root{
+      --bg1:#0b1020;
+      --bg2:#140b2a;
+      --card:#0f1733cc;
+      --text:#f6f7ff;
+      --muted:#cfd3ff;
+      --accent:#ff4d8d;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 800px at 20% 10%, #2a1a5e 0%, transparent 55%),
+                  radial-gradient(1000px 700px at 80% 30%, #6b1b4d 0%, transparent 60%),
+                  linear-gradient(160deg, var(--bg1), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      overflow:hidden;
+    }
+
+    /* Estrellitas suaves */
+    .stars{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.35;
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, #fff, transparent 60%),
+        radial-gradient(1px 1px at 140px 90px, #fff, transparent 60%),
+        radial-gradient(1px 1px at 220px 160px, #fff, transparent 60%),
+        radial-gradient(2px 2px at 340px 40px, #fff, transparent 60%),
+        radial-gradient(1px 1px at 420px 120px, #fff, transparent 60%),
+        radial-gradient(2px 2px at 520px 200px, #fff, transparent 60%),
+        radial-gradient(1px 1px at 640px 60px, #fff, transparent 60%),
+        radial-gradient(1px 1px at 760px 180px, #fff, transparent 60%),
+        radial-gradient(2px 2px at 880px 110px, #fff, transparent 60%),
+        radial-gradient(1px 1px at 980px 40px, #fff, transparent 60%);
+      background-size: 1000px 260px;
+      animation: drift 14s linear infinite;
+    }
+    @keyframes drift{
+      from{transform:translateY(0)}
+      to{transform:translateY(60px)}
+    }
+
+    .wrap{
+      width:min(920px, 100%);
+      display:grid;
+      gap:14px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:22px;
+      padding:18px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(22px, 4vw, 34px);
+      letter-spacing:.2px;
+      line-height:1.15;
+    }
+
+    .name{
+      color:var(--accent);
+      font-weight:800;
+      text-shadow: 0 0 22px rgba(255,77,141,.25);
+    }
+
+    .subtitle{
+      margin:8px 0 0;
+      color:var(--muted);
+      line-height:1.35;
+      font-size: 15px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      font-size:14px;
+      white-space:nowrap;
+    }
+
+    .heart{
+      width:14px;
+      height:14px;
+      display:inline-block;
+      transform: translateY(1px);
+      background: radial-gradient(circle at 30% 30%, #ffd1e1 0%, #ff4d8d 45%, #b40045 100%);
+      clip-path: path("M 7 13 C 7 13 0 9 0 4.8 C 0 2.2 2.2 0 4.7 0 C 6.1 0 7 0.7 7 0.7 C 7 0.7 7.9 0 9.3 0 C 11.8 0 14 2.2 14 4.8 C 14 9 7 13 7 13 Z");
+      filter: drop-shadow(0 0 10px rgba(255,77,141,.35));
+    }
+
+    .big-msg{
+      margin-top:12px;
+      padding:16px 16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      font-size: clamp(18px, 3.4vw, 26px);
+      line-height:1.25;
+      font-weight:800;
+      text-align:center;
+    }
+
+    .big-msg span{ color: var(--accent); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+
+    @media (min-width: 900px){
+      .grid{ grid-template-columns: 1.2fr .8fr; }
+    }
+
+    .videoBox{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      position:relative;
+    }
+
+    video{
+      width:100%;
+      height:auto;
+      display:block;
+      background:#000;
+    }
+
+    .hint{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .btn{
+      appearance:none;
+      border:none;
+      cursor:pointer;
+      width:100%;
+      padding:14px 14px;
+      border-radius:16px;
+      font-weight:800;
+      font-size:15px;
+      color:#0b1020;
+      background: linear-gradient(135deg, #ff4d8d, #ffd1e1);
+      box-shadow: 0 14px 30px rgba(255,77,141,.20);
+      transition: transform .08s ease, filter .2s ease;
+    }
+    .btn:active{ transform: translateY(1px) scale(.99); }
+
+    .small{
+      font-size:12px;
+      opacity:.85;
+      margin-top:10px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    .poem{
+      white-space:pre-line;
+      font-size:15px;
+      line-height:1.6;
+      color: var(--text);
+      padding:14px 14px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+
+    .fadeIn{
+      animation: fade .9s ease both;
+    }
+    @keyframes fade{
+      from{opacity:0; transform: translateY(10px)}
+      to{opacity:1; transform: translateY(0)}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars"></div>
+
+  <main class="wrap">
+    <section class="card fadeIn">
+      <div class="top">
+        <div>
+          <h1>Para <span class="name">América</span> 💘</h1>
+          <p class="subtitle">Una sorpresita de 14 de febrero hecha con todo mi cariño.</p>
+        </div>
+        <div class="badge"><span class="heart"></span> 14 de Febrero</div>
+      </div>
+
+      <div class="big-msg" id="msg">
+        Eres la mejor <span>💘</span><br>
+        y te amo muchooooooooo <span>🥹💘</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <section class="card fadeIn">
+        <h2 style="margin:0 0 10px; font-size:18px;">🎬 Video</h2>
+
+        <div class="videoBox">
+          <!--
+            IMPORTANTE:
+            1) Sube tu video a este repositorio (misma carpeta que este index.html)
+            2) Ponle de nombre EXACTO: video.mp4
+            3) Listo: se reproducirá aquí.
+          -->
+          <video id="video" controls playsinline preload="metadata">
+            <source src="video.mp4" type="video/mp4" />
+            Tu navegador no soporta video.
+          </video>
+        </div>
+
+        <div style="margin-top:12px; display:grid; gap:10px;">
+          <button class="btn" id="playBtn">Reproducir 💘</button>
+          <p class="hint">Tip: Si no se reproduce automático, toca el botón. (En celular a veces bloquean el autoplay.)</p>
+        </div>
+      </section>
+
+      <section class="card fadeIn">
+        <h2 style="margin:0 0 10px; font-size:18px;">💌 Mensajito</h2>
+        <div class="poem">
+América… 💘
+Tú eres esa parte bonita de mi vida que no quiero perder.
+Cada día contigo es especial, aunque sea un ratito.
+Hoy solo quiero recordarte algo:
+eres la mejor…
+y te amo muchooooooooo 🥹💘
+        </div>
+
+        <p class="small">Hecho por Jonathan ✨</p>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const video = document.getElementById('video');
+    const playBtn = document.getElementById('playBtn');
+
+    playBtn.addEventListener('click', async () => {
+      try{
+        await video.play();
+      }catch(e){
+        alert('Si no se reproduce, intenta abrirlo en Chrome o revisa que el archivo se llame video.mp4');
+      }
+    });
+
+    // Intento suave de autoplay (puede fallar en móviles)
+    window.addEventListener('load', async () => {
+      try{
+        video.muted = true;
+        await video.play();
+        // Si sí se pudo, lo desmuteamos
+        video.muted = false;
+      }catch(e){
+        // No pasa nada
+      }
+    });
+  </script>
+</body>
+  </html>
